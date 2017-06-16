@@ -1,0 +1,43 @@
+<ion-menu id="loggedInMenu" [content]="content" side="left">
+
+    <ion-header color="bar">
+        <ion-toolbar color="bar">
+            <ion-list no-lines padding-vertical>
+                <ion-item color="bar" padding-vertical class="item">
+                    <ion-avatar>
+                        <img src="assets/avatar2.png">
+                    </ion-avatar>
+                </ion-item>
+                <ion-item color="bar" class="item">
+                    <h2>dsgdsgs</h2>
+                    <h5>dsgsgdsg</h5>
+                    <ion-note item-right>
+                        <ion-icon name="cloud"></ion-icon>
+                    </ion-note>
+                </ion-item>
+            </ion-list>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="outer-content">
+
+        <ion-list no-lines>
+            <button ion-item menuClose class="item" (click)="openPage('Board')">
+        <ion-icon name="pulse"></ion-icon>
+        Tableau de board
+      </button>
+            <button ion-item menuClose class="item" (click)="openPage('Chat')">
+        <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+        Chat
+      </button>
+            <button ion-item menuClose class="item" (click)="openPage('About')">
+        <ion-icon name="information"></ion-icon>
+        A propos
+      </button>
+        </ion-list>
+
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeEnabled="false"></ion-nav>

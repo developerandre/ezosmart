@@ -1,0 +1,33 @@
+<ion-header>
+
+    <ion-navbar color="bar">
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <img src="assets/logo.png" class="logo" [width]="logoWidth" [height]="logoHeight" />
+    <h5 *ngIf="error" class="error">{{error}}</h5>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmited()" class="loginForm">
+        <ion-list no-lines padding-vertical>
+            <ion-item class="demo-full-width input" padding-top>
+                <ion-input placeholder="*Numero de telephone " formControlName="phone" type="tel"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" text-right *ngIf="loginForm.get('phone').touched && !loginForm.get('phone').valid"> entrez un numero de telephone valide</ion-item>
+            <ion-item class="demo-full-width input" padding-top>
+                <ion-input placeholder="*Password..." formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" *ngIf="loginForm.get('password').touched && !loginForm.get('password').valid">minimum 06 caractères</ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-xs-12 col-md-6 col-lg-6 col-lx-6>
+                        <button ion-button block color="primary" type="submit" [disabled]="!loginForm.valid">Se connecter</button>
+                    </ion-col>
+                    <ion-col col-xs-12 col-md-6 col-lg-6 col-lx-6>
+                        <button ion-button block color="primary" (tap)="onRegister()">S'inscrire</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+    </form>
+</ion-content>

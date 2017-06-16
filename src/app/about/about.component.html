@@ -1,0 +1,46 @@
+<ion-header>
+
+    <ion-navbar color="bar">
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>About</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <div class="about-header">
+        <img src="assets/logo.png" alt="ionic logo" class="logo">
+    </div>
+    <div padding class="about-info">
+        <h4>Trouvez-nous ici</h4>
+
+        <ion-list no-lines>
+            <ion-item>
+                <ion-icon name="calendar" item-left></ion-icon>
+                <ion-label>Date</ion-label>
+                <ion-datetime displayFormat="MMM DD, YYYY" max="2056" [(ngModel)]="conferenceDate"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-icon name="pin" item-left></ion-icon>
+                <ion-label>Location</ion-label>
+                <ion-select>
+                    <ion-option value="malfakassa" selected>Angle Rue 90 Bd Malfakassa Lomé Togo</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
+        <p>
+            <strong> peoplefornewenergy@gmail.com</strong><br>
+            <em>Angle Rue 90 Bd Malfakassa Lomé Togo</em><br>
+            <samp>Tél: +228 22 36 16 03</samp><br>
+            <mark> e-mail: info@energyforpeople.org</mark>
+        </p>
+        <p style="font-style:italic;">
+            EP-Group | Energy for people est la startup sociale togolaise qui apporte des solutions d’accès aux énergies renouvelables en milieux rural et périurbain. Pour permettre la durabilité et une maintenance prédictive des installations solaires, une gestion
+            numérique en est associée partir de l’application Ezosmart téléchargeable pour différents terminaux : PC, Android, Windows phone et iOS.
+        </p>
+    </div>
+
+</ion-content>

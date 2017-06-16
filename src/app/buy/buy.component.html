@@ -1,0 +1,44 @@
+<ion-header>
+
+    <ion-navbar color="bar">
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Achat</ion-title>
+    </ion-navbar>
+    <ion-toolbar no-border-top color="bar">
+        <ion-segment [(ngModel)]="segment">
+            <ion-segment-button value="FLOOZ" style="color:white;">
+                Flooz
+            </ion-segment-button>
+            <ion-segment-button value="TMONEY" style="color:white;">
+                TMoney
+            </ion-segment-button>
+            <ion-segment-button value="PAYPIAM" style="color:white;">
+                PayPiam
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <div [ngSwitch]="segment">
+        <div *ngSwitchCase="'FLOOZ'">
+            <app-flooz>
+            </app-flooz>
+        </div>
+        <div *ngSwitchCase="'TMONEY'">
+            <app-tmoney>
+            </app-tmoney>
+        </div>
+        <div *ngSwitchCase="'PAYPIAM'">
+            <app-paypiam>
+            </app-paypiam>
+        </div>
+        <div *ngSwitchDefault>
+            <app-flooz>
+            </app-flooz>
+        </div>
+    </div>
+
+</ion-content>

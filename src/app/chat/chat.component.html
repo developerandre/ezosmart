@@ -1,0 +1,44 @@
+<ion-header>
+
+    <ion-navbar color="bar">
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Chat</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <div *ngFor="let message of messages;let i=index" style="padding-bottom:5px;margin:0;" [ngClass]="{selected:message?.selected}">
+        <p text-wrap [ngClass]="{left:!message?.me,right:message?.me}">
+            {{message?.content}}
+        </p>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-item>
+            <!--
+<ion-avatar item-left (click)="clavier = !clavier" class="icons">
+<button ion-button clear round *ngIf="clavier">
+<ion-icon name="keypad"></ion-icon>
+</button>
+<button ion-button clear round *ngIf="!clavier">
+<ion-icon ios="ios-sad-outline" md="md-sad"></ion-icon>
+</button>
+</ion-avatar>
+-->
+            <ion-textarea placeholder="Entrez votre message ici ..." [(ngModel)]="texte" rows="2"></ion-textarea>
+            <ion-note item-right class="icons">
+                <button ion-fab (click)="sendMessage()" color="bar">
+<ion-icon name="send" style="color:white;"></ion-icon>
+</button>
+                <!--
+<button ion-fab *ngIf="!texte" color="bar">
+<ion-icon name="mic"></ion-icon>
+</button>
+-->
+            </ion-note>
+        </ion-item>
+    </ion-toolbar>
+</ion-footer>

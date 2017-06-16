@@ -1,0 +1,72 @@
+<ion-header>
+
+    <ion-navbar color="bar">
+        <ion-title>sign Up</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <img src="assets/logo.png" class="logo" [width]="logoWidth" [height]="logoHeight" />
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmited()">
+        <ion-list no-lines>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-item class="demo-full-width input">
+                            <ion-input placeholder="*Nom " formControlName="firstName"></ion-input>
+                        </ion-item>
+                        <ion-item class="errors input" text-right *ngIf="registerForm.get('firstName').touched && !registerForm.get('firstName').valid"> minimum 03 caractères</ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item class="demo-full-width input">
+                            <ion-input placeholder="*Prenoms " formControlName="lastName"></ion-input>
+                        </ion-item>
+                        <ion-item class="errors input" text-right *ngIf="registerForm.get('lastName').touched && !registerForm.get('lastName').valid"> minimum 03 caractères</ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*Numero de telephone " formControlName="phone"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" text-right *ngIf="registerForm.get('phone').touched && !registerForm.get('phone').valid"> un numéro valide s'il te plaît</ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*Password..." formControlName="password" type="password"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" *ngIf="registerForm.get('password').touched && !registerForm.get('password').valid">minimum 06 caractères</ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*retapez le mot de passe..." formControlName="confirmation" type="password"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" *ngIf="registerForm.get('confirmation').touched && !registerForm.get('confirmation').valid">minimum 06 caractères</ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="Email " formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*Occupation " formControlName="occupation"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" text-right *ngIf="registerForm.get('occupation').touched && !registerForm.get('occupation').valid"> minimum 03 caractères</ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*Pays " formControlName="country"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" text-right *ngIf="registerForm.get('country').touched && !registerForm.get('country').valid"> minimum 02 caractères</ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*Region " formControlName="region"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" text-right *ngIf="registerForm.get('region').touched && !registerForm.get('region').valid"> minimum 02 caractères</ion-item>
+            <ion-item class="demo-full-width input">
+                <ion-input placeholder="*Ville/Village " formControlName="city"></ion-input>
+            </ion-item>
+            <ion-item class="errors input" text-right *ngIf="registerForm.get('city').touched && !registerForm.get('city').valid"> minimum 02 caractères</ion-item>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-xs-12 col-md-6 col-lg-6 col-lx-6>
+                        <button ion-button block color="primary" type="submit" [disabled]="!registerForm.valid">S'inscrire</button>
+                    </ion-col>
+                    <ion-col col-xs-12 col-md-6 col-lg-6 col-lx-6>
+                        <button ion-button block color="primary" (tap)="goToLogin()">Se connecter</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+    </form>
+
+</ion-content>
